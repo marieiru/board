@@ -14,7 +14,7 @@
 	<name>board</name>
 	<description>掲示板</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
