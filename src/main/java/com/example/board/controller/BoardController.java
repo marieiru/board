@@ -53,13 +53,11 @@ public class BoardController {
            model.addAttribute("list", list);
            return model;
        }    
-    
+       
+       
        @RequestMapping(value = "/create", method = RequestMethod.POST)
        public String create(@ModelAttribute("form") @Validated(GroupOrder.class) Post form, BindingResult result, Model model) {
-    	          if (!result.hasErrors()) {
-    	               repository.saveAndFlush(PostFactory.createPost(form));
-    	               model.addAttribute("form", PostFactory.newPost());
-    	          }
+
            if (!result.hasErrors()) {
                repository.saveAndFlush(PostFactory.createPost(form));
                model.addAttribute("form", PostFactory.newPost());
@@ -69,6 +67,8 @@ public class BoardController {
            return "layout";       
        }    
 
+       
+       
        /**
         * 編集する投稿を表示する
         *
